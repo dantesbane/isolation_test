@@ -1,0 +1,10 @@
+use isolationtest;
+SET GLOBAL general_log = 'ON';
+SET GLOBAL log_output = 'TABLE';
+-- SET GLOBAL general_log_file = 'C:\Users\manav\OneDrive\Documents\vs code\sql\isolation test\isolation_log_file.log';
+-- SHOW VARIABLES LIKE 'general_log%';
+SHOW VARIABLES LIKE 'log_output';
+SHOW VARIABLES LIKE 'general_log';
+create table if not exists test1 (a int, b int );
+insert into test1 values (1,2),(2,3),(3,2),(4,3),(5,2);
+commit;
